@@ -167,6 +167,17 @@ select{
     background-color: #e2e2e2;
 }
 
+.text-error {
+    font-size: 14px;
+    font-style: italic;
+    color: red;
+    margin-left: 650px;
+    position: relative;
+    bottom: 30px;
+
+
+}
+
 @media only screen and (max-width: 960px){
     .cancelButton{
         margin-left: 0px;
@@ -201,14 +212,17 @@ select{
         justify-content: space-between;
         margin-bottom: 20px;
     }
-    .submitButton{
+
+    .submitButton {
         margin: 0;
     }
-    .buttonParent{
+    
+    .buttonParent {
         flex-direction: column-reverse;
         align-items: flex-start;
     }
-    .profile-radio-content{
-        flex-flow: wrap;
+
+    .row-content {
+        display: block;
     }
 }
