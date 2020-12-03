@@ -57,9 +57,16 @@ class EmployeePayrollData {
         return this._startDate;
     }
 
-    set startDate(startDate) {
-        this._startDate = startDate;
+set startDate(startDate) {
+    startDate = startDate.getTime() + (30 * 24 * 60 * 60 * 1000);
+    let today = new Date().getTime() + (30 * 24 * 60 * 60 * 1000);
+    //                                      day hour  min  sec  msec
+    if (today >= startDate) {
+        this._startDate = startDate
+    } else {
+        throw "Invalid date"
     }
+}
 
     get notes() {
         return this._notes;
@@ -69,9 +76,4 @@ class EmployeePayrollData {
         this._notes = notes;
     }
 
-    // toString() {
-    //     const options = { year: 'numeric', month: 'long', day: 'numeric'};
-    //     const employeeDate = this.startDate == undefined ? "undefined": this.startDate.toLocaleDateString("en-US", options);
-    //     return "ID: " + this.id + "\nName: " + this.name + "\nSalary: " + this.salary + "\nGender: " + this.gender + "\nStart date: " + this.startDate;
-    // }
 }
