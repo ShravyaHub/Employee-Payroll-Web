@@ -52,6 +52,7 @@ body{
 }
 
 .form{
+    margin-top: 10px;
     width: 65%;
     padding: 44px 60px;
     background: #ffffff 0% 0% no-repeat padding-box;
@@ -91,7 +92,7 @@ label{
     font-size: 16px;
     color: #42515f;
     opacity: 1;
-    font-family: Roboto;
+    font-family: "Roboto";
 }
 
 .input{
@@ -168,10 +169,10 @@ select{
 }
 
 .text-error {
-    font-size: 14px;
+    font-size: 12px;
     font-style: italic;
     color: red;
-    margin-left: 650px;
+    margin-left: 139px;
     position: relative;
     bottom: 30px;
 
@@ -189,6 +190,19 @@ select{
     .profile-radio-content{
         flex-flow: wrap;
     }
+    
+}
+
+@media only screen and (max-width: 690px){
+
+    .row-content {
+        display: block;
+    }
+
+    .text-error {
+        padding-right: 200px;
+    }
+
 }
 
 @media only screen and (max-width: 600px){
@@ -211,6 +225,7 @@ select{
         flex-direction: row-reverse;
         justify-content: space-between;
         margin-bottom: 20px;
+        padding-top: 20px;
     }
 
     .submitButton {
@@ -224,5 +239,8 @@ select{
 
     .row-content {
         display: block;
+    }
+    .text-error {
+        padding-right: 600px;
     }
 }
