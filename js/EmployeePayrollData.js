@@ -1,13 +1,11 @@
 class EmployeePayrollData {
 
-    constructor(...params) {
-        this.name = params[0];
-        this.picture = params[1];
-        this.gender = params[2];
-        this.department = params[3];
-        this.salary = params[4];
-        this.startDate = params[5];
-        this.notes = params[6];
+    get id() {
+        return this.id;
+    }
+
+    set id(id) {
+        this._id = id;
     }
 
     get name() {
@@ -22,11 +20,11 @@ class EmployeePayrollData {
             throw "Invalid name";
     }
 
-    get picture() {
-        return this._picture;
+    get profilePic() {
+        return this._profilePic;
     }
-    set picture(picture) {
-        this._picture = picture;
+    set profilePic(profilePic) {
+        this._profilePic = profilePic;
     }
 
     get gender() {
@@ -53,27 +51,26 @@ class EmployeePayrollData {
         this._salary = salary;
     }
 
+    get note() {
+        return this._note;
+    }
+
+    set note(note) {
+        this._note = note;
+    }
+
     get startDate() {
         return this._startDate;
     }
 
-set startDate(startDate) {
-    startDate = startDate.getTime() + (30 * 24 * 60 * 60 * 1000);
-    let today = new Date().getTime() + (30 * 24 * 60 * 60 * 1000);
-    //                                      day hour  min  sec  msec
-    if (today >= startDate) {
+    set startDate(startDate) {
         this._startDate = startDate
-    } else {
-        throw "Invalid date"
-    }
-}
-
-    get notes() {
-        return this._notes;
     }
 
-    set notes(notes) {
-        this._notes = notes;
+    toString(){
+        const options = { year : 'numeric', month : 'long', day : 'numeric' };
+        const empDate = !this.startDate ? "undefined" : this.startDate.toLocaleDateString("en-US", options);
+       return "id = " + this.id + ", name = " + this.name + ", gender = " + this.gender + ", profile picture = " + this.profilePic + ", department = " + this.department + ", salary = " + this.salary + ", startDate = " + this.startDate + ", note = " + this.note;
     }
 
 }

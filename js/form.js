@@ -9,9 +9,16 @@ const text = document.querySelector('#name');
 const textError = document.querySelector('.text-error');
 text.addEventListener('input', function() {
     let nameRegex = /^[A-Z][a-z]{2,}$/;
-    if(nameRegex.test(text.value))
+    if(nameRegex.test(text.value)) {
         textError.textContent = "";
-        else textError.textContent = "Name is incorrect";
+        document.getElementById("submitButton").disabled = false;
+
+    }
+    else {
+         textError.textContent = "Name is incorrect";
+         document.getElementById("submitButton").disabled = true;
+
+    }
 });
 
 document.getElementById("submitButton").onclick = function() {
@@ -23,6 +30,7 @@ document.getElementById("submitButton").onclick = function() {
     employee.salary = document.getElementById("salary").value;
     employee.notes = document.getElementById("notes").value;
     employee.startDate = new Date(parseInt(document.getElementById("year").value), parseInt(document.getElementById("month").value), parseInt(document.getElementById("day").value));
+    console.log(employee.toString());
 };
 
 document.getElementById("reset").onclick = function() {
