@@ -45,10 +45,22 @@ function save() {
     employee.name= document.getElementById("name").value;
     employee.picture = document.querySelector('input[name = profile]:checked').value;
     employee.gender = document.querySelector('input[name = gender]:checked').value;
-    employee.department =document.querySelector('input[name = department]:checked').value;
+    employee.department = document.querySelector('input[name = department]:checked').value;
     employee.salary = document.getElementById("salary").value;
     employee.startDate = new Date(parseInt(document.getElementById("year").value), parseInt(document.getElementById("month").value) - 1, parseInt(document.getElementById("day").value));
-    alert(employee.toString());
+    createAndUpdateStorage(employee);
+    // alert(employee.toString());
+}
+
+function createAndUpdateStorage(employee) {
+    let employeeList = JSON.parse(localStorage.getItem("EmployeeList"));
+    if(employeeList != undefined) {
+        employeeList.push(employee);
+    } else {
+        employeeList = [employee];
+    }
+    alert(employeeList.toString());
+    localStorage.setItem("EmployeeList", JSON.stringify(employeeList));
 }
 
 function resetForm() {
