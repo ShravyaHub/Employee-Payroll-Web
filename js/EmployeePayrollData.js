@@ -1,30 +1,32 @@
-class EmployeePayrollData {
-
-    get id() {
-        return this.id;
-    }
-
-    set id(id) {
-        this._id = id;
-    }
+class EmployeePayrollData{
 
     get name() {
         return this._name;
     }
 
     set name(name) {
-        let nameRegex = /[A-Z][a-z]{2,}/;
-        if(nameRegex.test(name))
+        let nameRegex = /^[A-Z][a-z]{2,}$/;
+        if(nameRegex.test(name)) {
             this._name = name;
-        else
+        } else {
             throw "Invalid name";
+        }
     }
 
-    get profilePic() {
-        return this._profilePic;
+    get picture() {
+        return this._picture;
     }
-    set profilePic(profilePic) {
-        this._profilePic = profilePic;
+
+    set picture(picture) {
+        this._picture = picture;
+    }
+
+    get salary() {
+        return this._salary;
+    }
+
+    set salary(salary) {
+        this._salary = salary;
     }
 
     get gender() {
@@ -43,12 +45,16 @@ class EmployeePayrollData {
         this._department = department;
     }
 
-    get salary() {
-        return this._salary;
+    get startDate() {
+        return this._startDate;
     }
 
-    set salary(salary) {
-        this._salary = salary;
+    set startDate(startDate) {
+        if(startDate <= new Date()) {
+            this._startDate = startDate;
+        } else {
+            throw "Invalid date";
+        }
     }
 
     get note() {
@@ -59,18 +65,7 @@ class EmployeePayrollData {
         this._note = note;
     }
 
-    get startDate() {
-        return this._startDate;
+    toString() {
+       return "\nName: " + this.name + "\nPicture: " + this.picture + "\nGender: " + this.gender + "\nDepartment: " + this.department + "\nSalary: " + this.salary + "\nStart date: " + this.startDate + "\nNote: " + this.note;
     }
-
-    set startDate(startDate) {
-        this._startDate = startDate
-    }
-
-    toString(){
-        const options = { year : 'numeric', month : 'long', day : 'numeric' };
-        const empDate = !this.startDate ? "undefined" : this.startDate.toLocaleDateString("en-US", options);
-       return "id = " + this.id + ", name = " + this.name + ", gender = " + this.gender + ", profile picture = " + this.profilePic + ", department = " + this.department + ", salary = " + this.salary + ", startDate = " + this.startDate + ", note = " + this.note;
-    }
-
 }

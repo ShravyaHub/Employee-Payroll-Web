@@ -1,14 +1,14 @@
-body{
+body {
     margin: 0;
     height: 100%;
 }
 
-.header{
+.header {
     padding: 15px 0;
     background-color: #ffffff;
 }
 
-.header-content{
+.header-content {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -16,7 +16,7 @@ body{
     border: 0px solid green;
 }
 
-.logo-content{
+.logo-content {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -24,11 +24,11 @@ body{
     width: 80%;
 }
 
-.logo-content-img{
+.logo-content-img {
     border: solid 0px #42515f;
 }
 
-.emp-text{
+.emp-text {
     font: normal normal bold 20px/25px Montserrat;
     font-family: "Montserrat", sans-serif;
     letter-spacing: 0px;
@@ -36,13 +36,15 @@ body{
     text-transform: capitalize;
 }
 
-.emp-payroll{
+.emp-payroll {
     color: #42515f;
 }
 
-*{ box-sizing: border-box;}
+* {
+    box-sizing: border-box;
+}
 
-.form-content{
+.form-content {
     min-height: calc(100% -80px);
     background-color: #f7f7f7;
     display: flex;
@@ -51,7 +53,7 @@ body{
     border: 0px solid green;
 }
 
-.form{
+.form {
     margin-top: 10px;
     width: 65%;
     padding: 44px 60px;
@@ -62,7 +64,7 @@ body{
     opacity: 1;
 }
 
-.form-head{
+.form-head {
     font: normal normal bold 24px/37px Roboto;
     letter-spacing: 0px;
     color: #42515f;
@@ -71,7 +73,7 @@ body{
     padding-bottom: 20px;
 }
 
-.row-content{
+.row-content {
     display: flex;
     flex-direction: row;
     margin-bottom: 30px;
@@ -79,23 +81,23 @@ body{
     border: 0px solid green;
 }
 
-.label{
+.label {
     min-width: 140px;
 }
 
-label{
+label {
     padding: 12px 12px 12px 0;
     display: inline-block;
 }
 
-.text{
+.text {
     font-size: 16px;
     color: #42515f;
     opacity: 1;
     font-family: "Roboto";
 }
 
-.input{
+.input {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -103,24 +105,24 @@ label{
     resize: vertical;
 }
 
-.profile-radio-content{
+.profile-radio-content {
     display: flex;
     flex-direction: row;
 }
 
-.profile-radio-content > label{
+.profile-radio-content > label {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.profile{
+.profile {
     width: 40px;
     border-radius: 50%;
     margin-left: 12px;
 }
 
-select{
+select {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -168,7 +170,7 @@ select{
     background-color: #e2e2e2;
 }
 
-.text-error {
+.text-error, .date-error {
     font-size: 12px;
     font-style: italic;
     color: red;
