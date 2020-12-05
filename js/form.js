@@ -49,7 +49,6 @@ function save() {
     employee.salary = document.getElementById("salary").value;
     employee.startDate = new Date(parseInt(document.getElementById("year").value), parseInt(document.getElementById("month").value) - 1, parseInt(document.getElementById("day").value));
     createAndUpdateStorage(employee);
-    // alert(employee.toString());
 }
 
 function createAndUpdateStorage(employee) {
