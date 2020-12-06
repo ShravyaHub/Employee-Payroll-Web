@@ -1,4 +1,5 @@
 window.addEventListener('DOMContentLoaded', (event) => {
+
     const salary = document.querySelector('#salary');
     const output = document.querySelector('.salary-output');
     output.textContent = salary.value;
@@ -14,6 +15,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         document.getElementById("submitButton").disabled = false;
         return;
       }
+
       try {
         (new EmployeePayrollData()).name = name.value;
         textError.textContent = "";
@@ -29,6 +31,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         const month = document.getElementById("month").value;
         const year = document.getElementById("year").value;
         const dateError = document.querySelector(".date-error");
+
         try {
             (new EmployeePayrollData()).startDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
             dateError.textContent = "";
@@ -38,6 +41,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             document.getElementById("submitButton").disabled = true;
       }
     });
+
 });
     
 function save() {
@@ -48,7 +52,9 @@ function save() {
     employee.department = document.querySelector('input[name = department]:checked').value;
     employee.salary = document.getElementById("salary").value;
     employee.startDate = new Date(parseInt(document.getElementById("year").value), parseInt(document.getElementById("month").value) - 1, parseInt(document.getElementById("day").value));
+    employee.note = document.getElementById("notes").value;
     createAndUpdateStorage(employee);
+    alert(employee.toString());
 }
 
 function createAndUpdateStorage(employee) {
@@ -58,7 +64,6 @@ function createAndUpdateStorage(employee) {
     } else {
         employeeList = [employee];
     }
-    alert(employeeList.toString());
     localStorage.setItem("EmployeeList", JSON.stringify(employeeList));
 }
 
