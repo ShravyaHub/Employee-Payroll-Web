@@ -54,7 +54,7 @@ function save() {
     employee.startDate = new Date(parseInt(document.getElementById("year").value), parseInt(document.getElementById("month").value) - 1, parseInt(document.getElementById("day").value));
     employee.note = document.getElementById("notes").value;
     createAndUpdateStorage(employee);
-    alert(employee.toString());
+    // alert(employee.toString());
 }
 
 function createAndUpdateStorage(employee) {
