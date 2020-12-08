@@ -58,11 +58,11 @@ class EmployeePayrollData{
     }
 
     set startDate(startDate) {
-        if(startDate <= new Date()) {
-            this._startDate = startDate;
-        } else {
-            throw "Invalid date";
+        const date = new Date();
+        if(startDate <= date && ((date - startDate) / (1000 * 60 * 60 * 24)) <= 30){
+         this._startDate = startDate;
         }
+        else throw "Enter valid date";
     }
 
     get note() {
