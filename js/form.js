@@ -43,18 +43,26 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
 
 });
+
+const getSelectedValues = (property) => {
+  let allItems = document.querySelectorAll(property);
+  let setItems = [];
+  allItems.forEach(item => {
+    if(item.checked) setItems.push(item.value);
+  });
+  return setItems;
+};
     
 function save() {
     let employee = new EmployeePayrollData();
     employee.name= document.getElementById("name").value;
     employee.picture = document.querySelector('input[name = profile]:checked').value;
     employee.gender = document.querySelector('input[name = gender]:checked').value;
-    employee.department = document.querySelector('input[name = department]:checked').value;
+    employee.department =getSelectedValues('[name=department]');
     employee.salary = document.getElementById("salary").value;
     employee.startDate = new Date(parseInt(document.getElementById("year").value), parseInt(document.getElementById("month").value) - 1, parseInt(document.getElementById("day").value));
     employee.note = document.getElementById("notes").value;
     createAndUpdateStorage(employee);
-    // alert(employee.toString());
 }
 
 function createAndUpdateStorage(employee) {

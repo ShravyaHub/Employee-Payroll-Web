@@ -5,7 +5,7 @@ class EmployeePayrollData{
     }
 
     set name(name) {
-        let nameRegex = /^[A-Z][a-z]{2,}$/;
+        let nameRegex = /^[A-Z][a-zA-Z]{2,}([ ][A-Z]([a-z]{1,})*)*$/;
         if(nameRegex.test(name)) {
             this._name = name;
         } else {
