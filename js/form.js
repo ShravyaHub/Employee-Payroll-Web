@@ -1,3 +1,6 @@
+let isUpdate = false;
+let employeePayrollObj = {};
+
 window.addEventListener('DOMContentLoaded', (event) => {
 
     const salary = document.querySelector('#salary');
@@ -41,7 +44,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             document.getElementById("submitButton").disabled = true;
       }
     });
-
+    checkForUpdate();
 });
 
 const getSelectedValues = (property) => {
@@ -78,3 +81,15 @@ function createAndUpdateStorage(employee) {
 function resetForm() {
     document.getElementById("emp-form").reset();
 }
+
+// const checkForUpdate = () => {
+//   const employeePayrollJSON = localStorage.getItem("editEmp");
+//   isUpdate = employeePayrollJSON ? true : false;
+//   if(!isUpdate) return;
+//   employeePayrollObj = JSON.
+// }
+
+// const setForm = () => {
+//   setValue('#name', employeePayrollObj._name);
+//   setSelectedValues('')
+// }
