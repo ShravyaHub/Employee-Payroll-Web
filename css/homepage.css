@@ -31,11 +31,11 @@ html body {
     letter-spacing: 0px;
     color: #82a70c;
     text-transform: capitalize;
+    padding-left: 5px;
 }
 .emp-payroll { color: #42515f; }
 * { box-sizing: border-box;}
 
-/* UC 2 */
 .main-content {
     display: flex;
     flex-direction: column;
@@ -86,7 +86,6 @@ html body {
     text-decoration: none;
 }
 
-/* UC 3 */
 .table-main {
     width: 80%;
     margin: 0 auto;
@@ -103,7 +102,6 @@ html body {
 td, th {
     text-align: left;
     padding: 5px 8px;
-    /* border: 1px solid #dddddd; */
 }
 
 th {
@@ -156,16 +154,6 @@ td img {
     margin-bottom: 8px;
 }
 
-  /* @media only screen and (max-width: 460px) {
-    .emp-detail-text {
-        font-size: 17px;
-    }
-
-    .add-button {
-        padding-top: 8px;
-        font-size: 13px;
-    }
-} */
 @media only screen and (max-width: 460px) {
     .emp-detail-text {
         font-size: 15px;
